@@ -7,7 +7,7 @@ import style from './style.scss'
 
 class Favourites extends React.Component {
   render() {
-    const movies = JSON.parse(localStorage.getItem('favourites'))
+    const movies = JSON.parse(localStorage.getItem('favourites'))||[]
 
     return (
       <div>
