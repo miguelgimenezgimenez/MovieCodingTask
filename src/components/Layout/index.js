@@ -6,6 +6,7 @@ import HomeIcon from 'react-icons/lib/md/home'
 import genres from '../../genres'
 import { tmdbSearch } from '../../actions/tmdbSearch'
 import Autocomplete from 'react-toolbox/lib/autocomplete'
+import { Link } from 'react-router-dom'
 
 class Layout extends Component {
   constructor(props) {
@@ -20,7 +21,8 @@ class Layout extends Component {
     })
   }
   handleClick() {
-    this.props.tmdbSearch(this.state.search)
+    // this.props.tmdbSearch(this.state.search)
+    this.props.history.push(`/search/${this.state.search}`)
   }
   render() {
     // the solution below is just a dirty workaround to get this working only when all the genres are loaded but wouldnt be the production solution
@@ -41,12 +43,15 @@ class Layout extends Component {
     return (
       <div className={style.navigationBar}>
         <div className={style.upperNav}>
-          <HomeIcon className={style.homeIcon} />
+          <Link to="/">
+            <HomeIcon className={style.homeIcon} />
+          </Link>
           <div className={style.user}>
-            <button className={style.button} type="submit">
-              Favourites
-            </button>
-
+            <Link to="favourites">
+              <button className={style.button} type="submit">
+                Favourites
+              </button>
+            </Link>
             <div className={style.avatar} />
           </div>
         </div>
@@ -54,7 +59,11 @@ class Layout extends Component {
           <div className={style.search}>
             <Autocomplete
               className={style.autocomplete}
-              style={{ backgroundColor: '#f1f1f1',border:'solid 4px #24313C' , marginLeft:-10}}
+              style={{
+                backgroundColor: '#f1f1f1',
+                border: 'solid 4px #24313C',
+                marginLeft: -10
+              }}
               direction="down"
               hint="  Search for a Movie..."
               multiple={false}

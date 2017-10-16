@@ -12,7 +12,8 @@ module.exports = {
   entry: './index.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   resolve: {
     extensions: ['.js', '.json']
@@ -44,7 +45,9 @@ module.exports = {
       }
     ]
   },
-
+  devServer: {
+    historyApiFallback: true
+  },
   devtool: 'eval-source-map',
 
   plugins: [HtmlWebpackPluginConfig]

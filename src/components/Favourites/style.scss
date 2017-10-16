@@ -1,13 +1,14 @@
-.genreContainer {
+.discover {
+  top: 150px;
+}
+.carrousel {
   display: flex;
   flex-wrap: nowrap;
-}
-.genreName {
-  color: white;
-  width: 200px;
-  margin: 20px
 }
 .movieContainer {
   background-size: 'cover';
   margin: 5px;
+}
+.results {
+  color:white;
 }

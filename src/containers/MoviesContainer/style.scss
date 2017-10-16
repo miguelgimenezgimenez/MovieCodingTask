@@ -1,0 +1,20 @@
+.container {
+  margin: auto;
+}
+.MoviesContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+.type {
+  color: white;
+  width: 200px;
+  margin: auto;
+  height: 45px;
+  text-align: center;
+  font-size: 15px;
+}
+.movieContainer {
+  background-size: 'cover';
+  margin: 5px;
+}

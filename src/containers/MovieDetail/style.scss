@@ -1,0 +1,28 @@
+@import '../../colors.scss';
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.movie {
+  display: flex;
+  color: white;
+  justify-content: center;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  margin-left: 30px;
+}
+.favorite {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  color: var(--hipster-orange);
+  padding-bottom: 5px;
+}
+.favorite:hover{
+  cursor: pointer;
+}
