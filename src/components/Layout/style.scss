@@ -1,10 +1,13 @@
 @import '../../colors.scss';
 
+.autocomplete {
+  color: var(--hipster-orange);
+  padding: 1px;
+}
 .button {
   background-color: var(--hipster-orange);
   border-radius: 5px;
   color: white;
-  /*padding: 10px;*/
   border: none !important;
   box-shadow: none !important;
   height: 35px;
@@ -29,7 +32,7 @@
 }
 
 .upperNav {
-  height: 80px;
+  height: 90px;
   margin: 0;
   border-radius: 0;
   background: url('./gplaypattern.png');
@@ -42,10 +45,7 @@
   right: 80px;
   position: absolute;
 }
-.createActivity {
-  color: var(--hipster-orange);
-  background-color: var(--hipster-dark);
-}
+
 .menuBtn {
   height: 45px;
   width: 45px;
@@ -54,14 +54,14 @@
   width: 50px;
   height: 50px;
   color: var(--hipster-orange);
-  margin-left: 50px;
+  margin-left: 65px;
   z-index: 3;
 }
-.homeIcon:hover{
+.homeIcon:hover {
   cursor: pointer;
 }
 .lowerNav {
-  height: 40px;
+  height: 50px;
   background-color: var(--hipster-dark);
   display: flex;
   align-items: center;
@@ -83,7 +83,7 @@
 }
 .avatar {
   border-radius: 40px;
-  margin: 8px 15px;
+  margin: 8px 10px;
   width: 40px;
   height: 40px;
   border: solid 2px lightgray;

@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { FormGroup, FormControl, Button } from 'react-bootstrap'
 import style from './style.scss'
 import HomeIcon from 'react-icons/lib/md/home'
 import genres from '../../genres'
-
+import { tmdbSearch } from '../../actions/tmdbSearch'
 import Autocomplete from 'react-toolbox/lib/autocomplete'
 
 class Layout extends Component {
@@ -19,6 +18,9 @@ class Layout extends Component {
     this.setState({
       search: value
     })
+  }
+  handleClick() {
+    this.props.tmdbSearch(this.state.search)
   }
   render() {
     // the solution below is just a dirty workaround to get this working only when all the genres are loaded but wouldnt be the production solution
@@ -36,7 +38,6 @@ class Layout extends Component {
       )
     }
 
-    console.log(movies)
     return (
       <div className={style.navigationBar}>
         <div className={style.upperNav}>
@@ -52,20 +53,24 @@ class Layout extends Component {
         <div className={style.lowerNav}>
           <div className={style.search}>
             <Autocomplete
-              style={{ backgroundColor: 'white' }}
+              className={style.autocomplete}
+              style={{ backgroundColor: '#f1f1f1',border:'solid 4px #24313C' , marginLeft:-10}}
               direction="down"
-              label="Search for a Movie..."
+              hint="  Search for a Movie..."
               multiple={false}
-              onChange={(val)=>this.handleChange(val)}
+              onChange={val => this.handleChange(val)}
               source={movies}
+              onKeyPress={e => this.handleChange(e.target.value)}
               value={this.state.search}
             />
+
             <Button
               className={style.button}
               style={{ height: 25 }}
               type="submit"
+              onClick={() => this.handleClick()}
             >
-              Go!
+              Search!
             </Button>
           </div>
         </div>
@@ -75,8 +80,12 @@ class Layout extends Component {
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  tmdbSearch: query => dispatch(tmdbSearch(query))
+})
 const mapStateToProps = state => {
   return { discover: state.discover }
 }
 
-export default connect(mapStateToProps)(Layout)
+export default connect(mapStateToProps, mapDispatchToProps)(Layout)

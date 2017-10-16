@@ -1,7 +1,7 @@
 export default (state = {}, action) => {
   switch (action.type) {
-    case 'DISCOVER_SUCCESS':
-      const newstate = { ...state, [action.genre]: action.tmdbMovies.results }
+    case 'SEARCH_SUCCESS':
+      const newstate = { ...state, movies: action.movies.results }
       return newstate
 
     default:

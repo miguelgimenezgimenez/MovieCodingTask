@@ -11,7 +11,7 @@ class App extends Component {
         <div>
           <Route path="/" component={Layout} />
           <Route exact path="/" component={Discover} />
-          {/* <Route path="/:movieId" component={MovieDetail} /> */}
+          <Route path="/:movieId" component={MovieDetail} />
         </div>
       </BrowserRouter>
     );
