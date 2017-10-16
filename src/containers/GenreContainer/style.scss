@@ -1,0 +1,14 @@
+.genreContainer {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.genreName {
+  color: white;
+  width: 200px;
+  /*padding: 30px;*/
+  margin: 20px
+}
+.movieContainer {
+  background-size: 'cover';
+  margin: 5px;
+}

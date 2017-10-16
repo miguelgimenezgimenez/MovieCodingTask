@@ -1,0 +1,96 @@
+@import '../../colors.scss';
+
+.button {
+  background-color: var(--hipster-orange);
+  border-radius: 5px;
+  color: white;
+  /*padding: 10px;*/
+  border: none !important;
+  box-shadow: none !important;
+  height: 35px;
+  margin: 12px;
+  width: 87px;
+}
+.button:hover {
+  background-color: var(--hipster-green);
+  cursor: pointer;
+}
+
+.navigationBar {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 2;
+}
+.navigation {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.upperNav {
+  height: 80px;
+  margin: 0;
+  border-radius: 0;
+  background: url('./gplaypattern.png');
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  right: 80px;
+  position: absolute;
+}
+.createActivity {
+  color: var(--hipster-orange);
+  background-color: var(--hipster-dark);
+}
+.menuBtn {
+  height: 45px;
+  width: 45px;
+}
+.homeIcon {
+  width: 50px;
+  height: 50px;
+  color: var(--hipster-orange);
+  margin-left: 50px;
+  z-index: 3;
+}
+.homeIcon:hover{
+  cursor: pointer;
+}
+.lowerNav {
+  height: 40px;
+  background-color: var(--hipster-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--hipster-orange);
+  border-bottom: 3px solid var(--hipster-orange);
+}
+.lowerNavItem {
+  display: flex;
+  align-items: center;
+  color: white;
+  height: auto;
+  height: 38px;
+  padding: 8px;
+  margin-right: 40px;
+}
+.selected {
+  background-color: var(--hipster-orange);
+}
+.avatar {
+  border-radius: 40px;
+  margin: 8px 15px;
+  width: 40px;
+  height: 40px;
+  border: solid 2px lightgray;
+  background: url('./avatar.png');
+  background-size: contain;
+}
+.search {
+  align-items: center;
+  display: flex;
+}
