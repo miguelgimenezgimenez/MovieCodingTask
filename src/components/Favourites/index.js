@@ -2,23 +2,22 @@ import React from 'react'
 import genres from '../../genres'
 import { connect } from 'react-redux'
 
-import MoviesContainer from '../../containers/MoviesContainer'
+import MovieDisplay from '../../components/MovieDisplay'
 import style from './style.scss'
 
-class Discover extends React.Component {
-  renderMovies() {
-    return genres.map(genre => {
-      return <MoviesContainer key={genre.id} genre={genre} />
-    })
-  }
-
+class Favourites extends React.Component {
   render() {
-    return <div className={style.discover}>
-      <div style={{height:150}}></div>
-      {this.renderMovies()}
-    </div>
+    const movies = JSON.parse(localStorage.getItem('favourites'))
+
+    return (
+      <div>
+        <div style={{ height: 200 }} />
+        <div className={style.title}>My Favourites</div>
+
+        <MovieDisplay movies={movies} />
+      </div>
+    )
   }
 }
 
-
-export default (Discover)
+export default Favourites

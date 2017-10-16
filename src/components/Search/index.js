@@ -1,19 +1,39 @@
 import React from 'react'
 import genres from '../../genres'
 import { connect } from 'react-redux'
+import { tmdbSearch } from '../../actions/tmdbSearch'
 
-import MoviesContainer from '../../containers/MoviesContainer'
+import MovieDisplay from '../../components/MovieDisplay'
 import style from './style.scss'
 
 class Search extends React.Component {
+  componentDidMount() {
+    this.props.tmdbSearch(this.props.match.params.query)
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.match.params.query != prevProps.match.params.query) {
+      this.props.tmdbSearch(this.props.match.params.query)
+    }
+  }
   render() {
+    const movies = this.props.search.movies || []
     return (
       <div className={style.discover}>
         <div style={{ height: 150 }} />
-        <MoviesContainer query={this.props.match.params.query} />
+        <div className={style.title}>Results..</div>
+        <MovieDisplay movies={movies} />
       </div>
     )
   }
 }
 
-export default Search
+const mapStateToProps = state => {
+  return {
+    search: state.search
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  tmdbSearch: query => dispatch(tmdbSearch(query))
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Search)

@@ -11,11 +11,11 @@ class MovieDetail extends React.Component {
     this.props.tmdbMovie(this.props.match.params.movieId)
   }
   storeMovie() {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || []
+    const favorites = JSON.parse(localStorage.getItem('favourites')) || []
     const { poster_path, id } = this.props.movie.movieDetails
     const dataToStore = { poster_path, id }
     favorites.push(dataToStore)
-    localStorage.setItem('favorites', JSON.stringify(favorites))
+    localStorage.setItem('favourites', JSON.stringify(favorites))
   }
   render() {
     const { movieDetails } = this.props.movie

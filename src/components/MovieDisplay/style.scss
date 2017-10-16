@@ -1,15 +1,9 @@
-.discover {
-  position: absolute;
-  top: 150px;
-}
-.carrousel {
+.MoviesContainer {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
 }
 .movieContainer {
   background-size: 'cover';
   margin: 5px;
-}
-.results {
-  color:white;
 }

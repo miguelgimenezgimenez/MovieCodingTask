@@ -21,7 +21,6 @@ class Layout extends Component {
     })
   }
   handleClick() {
-    // this.props.tmdbSearch(this.state.search)
     this.props.history.push(`/search/${this.state.search}`)
   }
   render() {
@@ -47,7 +46,7 @@ class Layout extends Component {
             <HomeIcon className={style.homeIcon} />
           </Link>
           <div className={style.user}>
-            <Link to="favourites">
+            <Link to="/favourites">
               <button className={style.button} type="submit">
                 Favourites
               </button>

@@ -14,7 +14,6 @@ class Discover extends React.Component {
 
   render() {
     return <div className={style.discover}>
-      <div style={{height:150}}></div>
       {this.renderMovies()}
     </div>
   }

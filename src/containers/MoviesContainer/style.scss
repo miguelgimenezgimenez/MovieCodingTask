@@ -1,15 +1,14 @@
 .container {
   margin: auto;
 }
-.MoviesContainer {
+.title{
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+
 }
 .type {
   color: white;
   width: 200px;
-  margin: auto;
+  // margin: auto;
   height: 45px;
   text-align: center;
   font-size: 15px;
