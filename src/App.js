@@ -5,7 +5,7 @@ import Discover from './components/Discover';
 import Favourites from './components/Favourites';
 import Layout from './components/Layout';
 import MovieDetail from './containers/MovieDetail';
-import Search from './components/Search';
+import Search from './containers/Search';
 
 class App extends Component {
   render() {
