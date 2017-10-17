@@ -1,7 +1,8 @@
 # IMG CODE TEST
 Simple Movie Search App using the Movie Database API.
-* Note to the reviewer 
-sorry for the overkill, I know this isnt exactly what was being asked for, but I thought I might add some features. 
+
+#### Note to the reviewer 
+_sorry for the overkill, I know this isnt exactly what was being asked for, but I thought I might add some features._
 
 
 
