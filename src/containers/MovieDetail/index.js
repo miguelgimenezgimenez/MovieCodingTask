@@ -12,15 +12,21 @@ class MovieDetail extends React.Component {
   }
   storeMovie() {
     const favorites = JSON.parse(localStorage.getItem('favourites')) || []
+
     const { poster_path, id } = this.props.movie.movieDetails
+
     const dataToStore = { poster_path, id }
-    favorites.push(dataToStore)
+    if (!favorites.find(movie => movie.id === id)) {
+      favorites.push(dataToStore)
+    }
+
     localStorage.setItem('favourites', JSON.stringify(favorites))
   }
   render() {
     const { movieDetails } = this.props.movie
 
-    if (!movieDetails) { //when element is not loaded
+    if (!movieDetails) {
+      //when element is not loaded
       return null
     }
 
