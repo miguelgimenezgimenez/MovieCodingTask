@@ -6,6 +6,8 @@ import { tmdbSearch } from '../../actions/tmdbSearch'
 import MovieDisplay from '../../components/MovieDisplay'
 import style from './style.scss'
 
+const NotFound = () => <div>not found</div>
+
 class Search extends React.Component {
   componentDidMount() {
     this.props.tmdbSearch(this.props.match.params.query)
@@ -20,7 +22,8 @@ class Search extends React.Component {
     return (
       <div className={style.discover}>
         <div style={{ height: 150 }} />
-        <div className={style.title}>Results..</div>
+        <div className={style.title}>Results...</div>
+
         <MovieDisplay movies={movies} />
       </div>
     )

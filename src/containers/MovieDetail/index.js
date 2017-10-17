@@ -19,9 +19,12 @@ class MovieDetail extends React.Component {
   }
   render() {
     const { movieDetails } = this.props.movie
-    if (!movieDetails) {
+
+    if (!movieDetails) { //when element is not loaded
       return null
     }
+
+    // below are the movie details we will be showing
     const director = movieDetails.credits.crew.find(item => {
       return item.job === 'Director'
     })
@@ -45,7 +48,6 @@ class MovieDetail extends React.Component {
               backgroundSize: 'cover',
               height: 380,
               width: 250
-              // margin: 'auto'
             }}
           />
           <div className={style.description}>

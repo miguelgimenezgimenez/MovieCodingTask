@@ -1,8 +1,10 @@
 export default (state = {}, action) => {
   switch (action.type) {
     case 'SEARCH_SUCCESS':
-      const newstate = { ...state, movies: action.movies.results }
-      return newstate
+      return { ...state, movies: action.movies.results }
+
+    case 'SEARCH_ERROR':
+      return { ...state, movies: 'not found' }
 
     default:
       return state

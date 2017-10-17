@@ -56,21 +56,22 @@ class Layout extends Component {
         </div>
         <div className={style.lowerNav}>
           <div className={style.search}>
-            <Autocomplete
-              className={style.autocomplete}
-              style={{
-                backgroundColor: '#f1f1f1',
-                border: 'solid 4px #24313C',
-                marginLeft: -10
-              }}
-              direction="down"
-              hint="  Search for a Movie..."
-              multiple={false}
-              onChange={val => this.handleChange(val)}
-              source={movies}
-              onKeyPress={e => this.handleChange(e.target.value)}
-              value={this.state.search}
-            />
+            <div onChange={e => this.handleChange(e.target.value)}>
+              <Autocomplete
+                className={style.autocomplete}
+                style={{
+                  backgroundColor: '#f1f1f1',
+                  border: 'solid 4px #24313C',
+                  marginLeft: -10
+                }}
+                direction="down"
+                hint="  Search for a Movie..."
+                multiple={false}
+                onChange={val => this.handleChange(val)}
+                source={movies}
+                value={this.state.search}
+              />
+            </div>
 
             <Button
               className={style.button}

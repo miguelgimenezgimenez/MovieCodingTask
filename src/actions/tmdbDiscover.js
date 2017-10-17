@@ -7,7 +7,7 @@ export const tmdbDiscover = endpoint => {
         // ======================================================
         // here the correct thing would be to dispatch DISCOVER_ERROR
         // ======================================================
-        console.log('Looks like there was a problem.  ' + response.status);
+        console.log('Looks like there was a problem.  ' + response);
         return;
       }
       response.json().then(movies => {
