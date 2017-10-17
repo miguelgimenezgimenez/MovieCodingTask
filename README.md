@@ -12,7 +12,7 @@ Auto complete Search Bar is done using react toolbox.
 
 #### Note to the reviewer 
 
-_sorry for the overkill, I know this isnt exactly what was being asked for, but I thought I might add some features. Have worked on it really fast and maybe ended up a bit messy . Also . just realized that wanting to optimize performance I did it in a way that tried to avoid re rendering of components but it didnt work the way i  wanted it to , but now i understand react a lot better_
+_sorry for the overkill, I know this isnt exactly what was being asked for, but I thought I might add some features. Have worked on it really fast and maybe ended up a bit messy . Also  just realized that wanting to optimize performance I did it in a way that tried to avoid re rendering of components but it didnt work the way i  wanted it to , but now i understand react a lot better_
 
 
  
