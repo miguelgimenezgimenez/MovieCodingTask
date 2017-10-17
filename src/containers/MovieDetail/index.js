@@ -45,7 +45,7 @@ class MovieDetail extends React.Component {
           <div
             style={{
               background: `url(${url}) no-repeat`,
-              backgroundSize: 'cover',
+              backgroundSize: 'contain',
               height: 380,
               width: 250
             }}
