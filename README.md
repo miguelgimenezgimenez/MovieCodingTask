@@ -7,7 +7,8 @@ I have tried to optimize performance trying to avoid useless re-rendering (
 
 
 #### Note to the reviewer 
-_sorry for the overkill, I know this isnt exactly what was being asked for, but I thought I might add some features. Have worked on it really fast , sorry if its a bit messy. _
+
+_sorry for the overkill, I know this isnt exactly what was being asked for, but I thought I might add some features. Have worked on it really fast and maybe ended up a bit messy_
 
 
 
