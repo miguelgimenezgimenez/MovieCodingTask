@@ -6,7 +6,6 @@ import { tmdbSearch } from '../../actions/tmdbSearch'
 import MovieDisplay from '../../components/MovieDisplay'
 import style from './style.scss'
 
-const NotFound = () => <div>not found</div>
 
 class Search extends React.Component {
   componentDidMount() {
