@@ -55,7 +55,7 @@ showing only one genre
 ![screen shot 2017-08-13 at 21 42 40](https://user-images.githubusercontent.com/20644456/31657072-c4806540-b32d-11e7-987f-89dd3bfc2acf.png)
 
 ### AutoComplete ###
-![screen shot 2017-08-13 at 21 42 40](https://user-images.githubusercontent.com/20644456/31657072-c4806540-b32d-11e7-987f-89dd3bfc2acf.png)
+![screen shot 2017-08-13 at 21 42 40](https://user-images.githubusercontent.com/20644456/31657049-b9af2138-b32d-11e7-972c-00f4536ea2a5.png)
 
 
 
