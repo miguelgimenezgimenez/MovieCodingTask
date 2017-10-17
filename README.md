@@ -22,9 +22,16 @@ _sorry for the overkill, I know this isnt exactly what was being asked for, but 
 
 
 To runn the App
-
+clone or download repository
 ```
-npm install // yarn
+npm install 
+```
+or
+```
+yarn
+```
+then
+```
 npm start
 ```
 
