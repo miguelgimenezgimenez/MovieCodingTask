@@ -40,7 +40,7 @@ Then open [`localhost:8080`](http://localhost:8080) in a browser.
 
 
 ## Available routes/views
-### Discover###
+### Discover ###
 showing only one genre
 ![screen shot 2017-08-13 at 21 42 40](https://user-images.githubusercontent.com/20644456/31657042-b775987a-b32d-11e7-9e26-aab593576533.png)
 
