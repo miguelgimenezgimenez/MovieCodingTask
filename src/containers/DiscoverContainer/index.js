@@ -1,17 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { tmdbDiscover } from '../../actions/tmdbDiscover'
+import { getGenreMovies } from '../../actions/getGenreMovies'
 import { Link } from 'react-router-dom'
 import MovieDisplay from '../../components/MovieDisplay'
 import style from './style.scss'
 
 class DiscoverContainer extends React.Component {
   componentDidMount() {
-    this.props.tmdbDiscover(this.props.genre)
+    this.props.getGenreMovies(this.props.genre)
   }
   render() {
     const genre = this.props.genre.name
-    console.log(genre)
     const movies = this.props[genre].movies || []
     return (
       <div className={style.container}>
@@ -31,6 +30,6 @@ const mapStateToProps = (state,ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  tmdbDiscover: endpoint => dispatch(tmdbDiscover(endpoint)),
+  getGenreMovies: endpoint => dispatch(getGenreMovies(endpoint)),
 })
 export default connect(mapStateToProps, mapDispatchToProps)(DiscoverContainer)

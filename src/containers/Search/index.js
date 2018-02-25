@@ -1,7 +1,7 @@
 import React from 'react'
 import genres from '../../genres'
 import { connect } from 'react-redux'
-import { tmdbSearch } from '../../actions/tmdbSearch'
+import { search } from '../../actions/search'
 
 import MovieDisplay from '../../components/MovieDisplay'
 import style from './style.scss'
@@ -9,11 +9,11 @@ import style from './style.scss'
 
 class Search extends React.Component {
   componentDidMount() {
-    this.props.tmdbSearch(this.props.match.params.query)
+    this.props.search(this.props.match.params.query)
   }
   componentDidUpdate(prevProps, prevState) {
     if (this.props.match.params.query != prevProps.match.params.query) {
-      this.props.tmdbSearch(this.props.match.params.query)
+      this.props.search(this.props.match.params.query)
     }
   }
   render() {
@@ -36,6 +36,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  tmdbSearch: query => dispatch(tmdbSearch(query))
+  search: query => dispatch(search(query))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(Search)

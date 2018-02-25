@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Button } from 'react-bootstrap'
 import style from './style.scss'
 import HomeIcon from 'react-icons/lib/md/home'
 import genres from '../../genres'
-import { tmdbSearch } from '../../actions/tmdbSearch'
+import { search } from '../../actions/search'
 import Autocomplete from 'react-toolbox/lib/autocomplete'
 import { Link } from 'react-router-dom'
 
@@ -24,16 +24,6 @@ class Layout extends Component {
     this.props.history.push(`/search/${this.state.search}`)
   }
   render() {
-    // the solution below is just a dirty workaround to get this working only when all the genres are loaded but wouldnt be the production solution
-    // let movies = []
-    // const genres = (this.props.discover)
-    // if (genres.length === 19) {
-    //   genres.forEach((genre) => {
-    //     movies = movies.concat(this.props.discover[genre].map((item) => item.title))
-    //   })
-    //   // filter only unique values
-    //   movies = movies.filter((movie, i, refArray) => refArray.indexOf(movie) == i)
-    // }
 
     return (
       <div className={style.navigationBar}>
@@ -52,7 +42,7 @@ class Layout extends Component {
         </div>
         <div className={style.lowerNav}>
           <div className={style.search}>
-            {/* <div onChange={(e) => this.handleChange(e.target.value)}>
+            <div onChange={(e) => this.handleChange(e.target.value)}>
               <Autocomplete
                 className={style.autocomplete}
                 style={{
@@ -64,10 +54,10 @@ class Layout extends Component {
                 hint="  Search for a Movie..."
                 multiple={false}
                 onChange={(val) => this.handleChange(val)}
-                source={movies}
+                source={this.props.allMovies}
                 value={this.state.search}
               />
-            </div> */}
+            </div>
 
             <Button className={style.button} style={{ height: 25 }} type="submit" onClick={() => this.handleClick()}>
               Search!
@@ -82,13 +72,11 @@ class Layout extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  tmdbSearch: (query) => dispatch(tmdbSearch(query))
+  search: (query) => dispatch(search(query))
 })
 const mapStateToProps = (state) => {
-  const mappedState = genres.reduce((current, next) => {
-    return { [current.name]: state.name }
-  }, {})
-  return { ...mappedState }
+
+  return {allMovies:state.allMovies.allMovies}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout)

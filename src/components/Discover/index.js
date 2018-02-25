@@ -13,6 +13,7 @@ class Discover extends React.Component {
   }
 
   render() {
+    console.warn(this.props)
     return <div className={style.discover}>{this.renderMovies()}</div>
   }
 }

@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import Iframe from 'react-iframe'
 import Favorite from 'react-icons/lib/md/add-circle'
 
-import { tmdbMovie } from '../../actions/tmdbMovie'
+import { getMovie } from '../../actions/getMovie'
 import style from './style.scss'
 
 class MovieDetail extends React.Component {
   componentDidMount() {
-    this.props.tmdbMovie(this.props.match.params.movieId)
+    this.props.getMovie(this.props.match.params.movieId)
   }
   storeMovie() {
     const favorites = JSON.parse(localStorage.getItem('favourites')) || []
@@ -93,6 +93,6 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  tmdbMovie: endpoint => dispatch(tmdbMovie(endpoint))
+  getMovie: endpoint => dispatch(getMovie(endpoint))
 })
 export default connect(mapStateToProps, mapDispatchToProps)(MovieDetail)
