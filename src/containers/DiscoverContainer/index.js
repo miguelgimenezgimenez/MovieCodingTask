@@ -25,8 +25,6 @@ class DiscoverContainer extends React.Component {
 }
 
 const mapStateToProps = (state,ownProps) => {
-  console.log(ownProps)
-  console.log(state)
   return {
     [ownProps.genre.name]: state[ownProps.genre.name],
   }
