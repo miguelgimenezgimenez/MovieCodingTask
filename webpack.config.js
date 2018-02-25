@@ -50,5 +50,10 @@ module.exports = {
   },
   devtool: 'eval-source-map',
 
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': { NODE_ENV: `"${process.env.NODE_ENV || 'development'}"` }
+    }),
+    HtmlWebpackPluginConfig
+  ]
 }
