@@ -25,19 +25,15 @@ class Layout extends Component {
   }
   render() {
     // the solution below is just a dirty workaround to get this working only when all the genres are loaded but wouldnt be the production solution
-    let movies = []
-    const genres = Object.keys(this.props.discover)
-    if (genres.length === 19) {
-      genres.forEach(genre => {
-        movies = movies.concat(
-          this.props.discover[genre].map(item => item.title)
-        )
-      })
-      // filter only unique values
-      movies = movies.filter(
-        (movie, i, refArray) => refArray.indexOf(movie) == i
-      )
-    }
+    // let movies = []
+    // const genres = (this.props.discover)
+    // if (genres.length === 19) {
+    //   genres.forEach((genre) => {
+    //     movies = movies.concat(this.props.discover[genre].map((item) => item.title))
+    //   })
+    //   // filter only unique values
+    //   movies = movies.filter((movie, i, refArray) => refArray.indexOf(movie) == i)
+    // }
 
     return (
       <div className={style.navigationBar}>
@@ -56,7 +52,7 @@ class Layout extends Component {
         </div>
         <div className={style.lowerNav}>
           <div className={style.search}>
-            <div onChange={e => this.handleChange(e.target.value)}>
+            {/* <div onChange={(e) => this.handleChange(e.target.value)}>
               <Autocomplete
                 className={style.autocomplete}
                 style={{
@@ -67,18 +63,13 @@ class Layout extends Component {
                 direction="down"
                 hint="  Search for a Movie..."
                 multiple={false}
-                onChange={val => this.handleChange(val)}
+                onChange={(val) => this.handleChange(val)}
                 source={movies}
                 value={this.state.search}
               />
-            </div>
+            </div> */}
 
-            <Button
-              className={style.button}
-              style={{ height: 25 }}
-              type="submit"
-              onClick={() => this.handleClick()}
-            >
+            <Button className={style.button} style={{ height: 25 }} type="submit" onClick={() => this.handleClick()}>
               Search!
             </Button>
           </div>
@@ -90,11 +81,14 @@ class Layout extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  tmdbSearch: query => dispatch(tmdbSearch(query))
+const mapDispatchToProps = (dispatch) => ({
+  tmdbSearch: (query) => dispatch(tmdbSearch(query))
 })
-const mapStateToProps = state => {
-  return { discover: state.discover }
+const mapStateToProps = (state) => {
+  const mappedState = genres.reduce((current, next) => {
+    return { [current.name]: state.name }
+  }, {})
+  return { ...mappedState }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout)

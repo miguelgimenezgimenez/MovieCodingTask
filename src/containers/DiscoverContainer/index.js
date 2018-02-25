@@ -11,8 +11,8 @@ class DiscoverContainer extends React.Component {
   }
   render() {
     const genre = this.props.genre.name
-    const movies = this.props.discover[genre] || []
-
+    console.log(genre)
+    const movies = this.props[genre].movies || []
     return (
       <div className={style.container}>
         <div className={style.title}>
@@ -24,9 +24,11 @@ class DiscoverContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state,ownProps) => {
+  console.log(ownProps)
+  console.log(state)
   return {
-    discover: state.discover,
+    [ownProps.genre.name]: state[ownProps.genre.name],
   }
 }
 

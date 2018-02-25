@@ -11,8 +11,10 @@ export const tmdbDiscover = endpoint => {
         return;
       }
       response.json().then(movies => {
+        const genre = endpoint.name.toUpperCase()
+        const type = `GET_${genre}_SUCCESS`
         dispatch({
-          type: 'DISCOVER_SUCCESS',
+          type,
           tmdbMovies: movies,
           genre: endpoint.name
         });
